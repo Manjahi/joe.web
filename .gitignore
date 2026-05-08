@@ -1,0 +1,13 @@
+# Office documents (large binary files — keep outside version control)
+*.docx
+*.pptx
+*.doc
+*.ppt
+*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/

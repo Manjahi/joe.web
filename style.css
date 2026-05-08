@@ -1,0 +1,388 @@
+/* ============================================================
+   Google Fonts
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   Design Tokens
+   ============================================================ */
+:root {
+  --color-dark:    #212529;
+  --color-gold:    #ffc107;
+  --color-gold-dk: #e6ac00;
+  --color-blue:    #0d6efd;
+  --color-blue-dk: #0b5ed7;
+  --color-light:   #f8f9fa;
+  --color-white:   #ffffff;
+  --color-muted:   #6c757d;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --navbar-h:     74px;
+  --transition:   0.28s ease;
+  --radius:       4px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  padding-top: var(--navbar-h);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.navbar {
+  min-height: var(--navbar-h);
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  max-width: 260px;
+  line-height: 1.3;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-gold) !important;
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+.hero-section {
+  min-height: calc(100vh - var(--navbar-h));
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.hero-section h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hero-section .lead {
+  font-size: 1.1rem;
+  max-width: 480px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.hero-section img {
+  border-left: 5px solid var(--color-gold);
+  object-fit: cover;
+}
+
+/* ============================================================
+   Page Header (inner pages)
+   ============================================================ */
+.page-header {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  border-radius: var(--radius);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: all var(--transition);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  background-color: var(--color-gold-dk);
+  border-color: var(--color-gold-dk);
+  color: var(--color-dark);
+}
+
+.btn-primary {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-blue-dk);
+  border-color: var(--color-blue-dk);
+}
+
+/* ============================================================
+   Newsletter Bar
+   ============================================================ */
+.newsletter-section {
+  background: var(--color-blue);
+}
+
+.news-input {
+  max-width: 420px;
+}
+
+/* ============================================================
+   Section Titles
+   ============================================================ */
+.section-title {
+  position: relative;
+  padding-bottom: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+.section-title.text-start::after {
+  left: 0;
+  transform: none;
+}
+
+/* ============================================================
+   Project Cards
+   ============================================================ */
+.project-card {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+.project-card .card-img-top {
+  height: 230px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-card .card-body {
+  padding: 1.5rem;
+}
+
+.project-card .card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.project-card .project-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   About Section
+   ============================================================ */
+.about-img-wrap img {
+  border-left: 5px solid var(--color-gold);
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ============================================================
+   Services Section
+   ============================================================ */
+.services-img-wrap img {
+  border-right: 5px solid var(--color-gold);
+  object-fit: cover;
+  width: 100%;
+}
+
+.service-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.service-item i {
+  color: var(--color-gold);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Services Cards (services page)
+   ============================================================ */
+.service-card {
+  border: none;
+  border-top: 3px solid var(--color-gold);
+  border-radius: var(--radius);
+  transition: box-shadow var(--transition);
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.service-card .service-icon {
+  font-size: 2.4rem;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   FAQ Accordion
+   ============================================================ */
+.accordion-button {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--color-dark);
+  background-color: rgba(255, 193, 7, 0.08);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.3);
+}
+
+/* ============================================================
+   Book Appointment Section
+   ============================================================ */
+.book-section {
+  background: var(--color-gold);
+}
+
+/* ============================================================
+   Contact Section
+   ============================================================ */
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.contact-detail i {
+  color: var(--color-blue);
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Social Icons
+   ============================================================ */
+.social-icons a {
+  transition: color var(--transition), transform var(--transition);
+  display: inline-block;
+}
+
+.social-icons a:hover {
+  color: var(--color-gold) !important;
+  transform: scale(1.18);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  border-top: 3px solid var(--color-gold);
+}
+
+footer a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+footer a:hover {
+  color: var(--color-gold);
+}
+
+/* ============================================================
+   Portfolio Page
+   ============================================================ */
+.portfolio-card {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  height: 260px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.04);
+}
+
+.portfolio-card .card-body {
+  border-top: 3px solid var(--color-gold);
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+.text-gold {
+  color: var(--color-gold) !important;
+}
+
+.bg-gold {
+  background-color: var(--color-gold) !important;
+}
+
+.border-gold {
+  border-color: var(--color-gold) !important;
+}

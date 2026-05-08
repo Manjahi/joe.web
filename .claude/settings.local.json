@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\EARTH COUNT\\\\Desktop\\\\PERSONAL WORK\\\\websites\\\\joe.web\" -Recurse -Force)",
+      "Bash(Select-Object -Property FullName)",
+      "Bash(Sort-Object FullName)"
+    ]
+  }
+}
